@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 const Navbar = (props) => {
 	const { auth, profile } = props;
 	return (
-		<nav className="nav-wrapper red darken-3">
+		<nav className="nav-wrapper  blue-grey darken-1">
 			<div className="container-fluid">
 				<Link to="/" className="brand-logo left">
 					Projectobia

@@ -1,5 +1,5 @@
 export const signin = (Credential) => {
-	return (dispatch, getState, { getFirebase }) => {
+	return (dispatch, getState, { getFirebase, getFirestore }) => {
 		const firebase = getFirebase();
 		firebase
 			.auth()
@@ -42,6 +42,14 @@ export const signup = (newUser) => {
 						lastName: newUser.lastName,
 						initial: newUser.firstName[0] + newUser.lastName[0],
 					});
+			})
+			.then(() => {
+				return firestore.collection("Notifications").add({
+					authorFirstname: newUser.firstName,
+					authorLastname: newUser.lastName,
+					action: "Signed up",
+					createdAt: new Date(),
+				});
 			})
 			.then(() => {
 				dispatch({ type: "signUp_success" });

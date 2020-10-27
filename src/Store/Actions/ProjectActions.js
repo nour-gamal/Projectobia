@@ -3,7 +3,12 @@ const createProject = (project) => {
 		//make async calls to database
 		const firestore = getFirestore();
 		const profile = getState();
-		console.log(profile);
+		firestore.collection("Notifications").add({
+			authorFirstname: profile.firebase.profile.firstName,
+			authorLastname: profile.firebase.profile.lastName,
+			action: "created a project",
+			createdAt: new Date(),
+		});
 		firestore
 			.collection("Projects")
 			.add({
@@ -17,4 +22,5 @@ const createProject = (project) => {
 			.catch((err) => dispatch({ type: "CREATE_PROJECT_ERROR", err }));
 	};
 };
+
 export default createProject;

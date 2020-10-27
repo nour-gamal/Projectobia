@@ -8,7 +8,7 @@ const ProjectSummary = ({
 	createdAt,
 }) => {
 	return (
-		<div className="card z-depth-2  project-summary white-text red darken-3">
+		<div className="card z-depth-2  project-summary white-text blue-grey darken-1">
 			<div className="card-content">
 				<span className="card-title center-align ">{title}</span>
 				<p>{content}</p>

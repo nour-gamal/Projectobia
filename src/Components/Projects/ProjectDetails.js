@@ -13,7 +13,7 @@ const ProjectDetails = (props) => {
 	if (project) {
 		return (
 			<div className="container project-details section ">
-				<div className="card z-depth-2 white-text red darken-3">
+				<div className="card z-depth-2 white-text blue-grey darken-1">
 					<div className="card-content">
 						<span className="card-title center-align">{project.title}</span>
 						<p>{project.content}</p>
