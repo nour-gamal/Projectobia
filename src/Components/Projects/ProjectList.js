@@ -21,4 +21,4 @@ const ProjectList = ({ projects }) => {
 	);
 };
 
-export default firestoreConnect([{ collection: "Projects", orderBy: ["createdAt", "desc"] }])(ProjectList);
+export default ProjectList;
