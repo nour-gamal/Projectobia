@@ -12,6 +12,7 @@ const Navbar = (props) => {
 						Projectobia
 					</Link>
 					{auth ? <SignedInLinks profile={profile} /> : <SignedOutLinks />}
+			</div>
 		</nav>
 	);
 };
